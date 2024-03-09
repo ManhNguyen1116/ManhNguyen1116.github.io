@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<link rel="icon" href="assets/img/favicon.ico">
+<html lang="en">
+{% include head.html %}
+<body style="font-family: 'Open Sans', sans-serif; background-color: #111">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md container-fluid" style="opacity: 1; position: fixed;">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-options">
+            <i class="navbar-toggler-icon"></i>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-options">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" style="color: #a0e9ff" href="#header">
+                    <i class="bi bi-house"></i> Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: #a0e9ff" href="#about">
+                    <i class="bi bi-person"></i> About
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="color: #a0e9ff" href="#projects">
+                    <i class="bi bi-code-slash"></i> Projects
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="header" style="background-color: #111">
+        {% include header.html %}
+    </div>
+    <div id="about" style="background-color: #212121">
+        {% include about.html %}
+    </div>
+    <div id="projects" style="background-color: #111;">
+        {% include projects.html %}
+    </div>
+    
+     <!-- bootstrap bundle with popper -->
+     <script src="assets/scripts/bootstrap.bundle.min.js"></script>
+     <!-- navbar disappear on scroll down and reappear on scroll up -->
+     <script>
+        let prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector(".navbar").style.top = "0";
+            } else {
+                document.querySelector(".navbar").style.top = "-100px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
+</body>
+</html>
